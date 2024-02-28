@@ -12,7 +12,7 @@ const OpeningHours = () => {
       }}
     >
       <div className="bg-[#B2C4A1] bg-opacity-100 p-6">
-        <div className="bg-black p-6 border-double border-8 border-[#BB945C] shadow-2xl rounded ">
+        <div className="bg-black p-6 md:w-2/3 mx-auto border-double border-8 border-[#BB945C] shadow-2xl rounded ">
           <h3 className="font-bold  text-[#BB945C] text-center md:text-lg  mb-6">
             - OPENING HOURS -
           </h3>
