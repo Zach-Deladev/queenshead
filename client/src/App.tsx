@@ -1,4 +1,3 @@
-
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
@@ -9,13 +8,14 @@ import Reviews from "./components/Reviews";
 import AboutUs from "./components/AboutUs";
 
 function App() {
- 
-
   return (
     <>
       <NavBar />
       <div id="home">
         <Hero />
+      </div>
+      <div id="opening-hours">
+        <OpeningHours />
       </div>
       <div id="about">
         <AboutUs />
@@ -23,9 +23,7 @@ function App() {
       <div id="menu">
         <MenuSection />
       </div>
-      <div id="opening-hours">
-        <OpeningHours />
-      </div>
+
       <div id="reviews">
         <Reviews />
       </div>

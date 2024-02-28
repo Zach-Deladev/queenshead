@@ -16,10 +16,12 @@ const AboutUs = () => {
             <img
               src={pubImage}
               alt="The Queen's Head Pub"
-              className="rounded-lg h-auto shadow-md md:h-[500px] shadow-xl"
+              className="rounded-lg h-auto
+              md:h-[500px] drop-shadow-xl
+              "
             />
           </div>
-          <div className="rounded  bg-white p-6 shadow-xl ">
+          <div className="rounded  bg-white p-6 drop-shadow-xl">
             <h2
               style={{
                 fontFamily: "'Abhaya Libre', serif",
