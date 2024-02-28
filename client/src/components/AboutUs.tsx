@@ -16,10 +16,10 @@ const AboutUs = () => {
             <img
               src={pubImage}
               alt="The Queen's Head Pub"
-              className="rounded-lg shadow-md border-4 border-[#BB945C]"
+              className="rounded-lg shadow-md  shadow-xl"
             />
           </div>
-          <div className="border-4 border-[#BB945C] bg-white p-6 ">
+          <div className="rounded  bg-white p-6 shadow-xl ">
             <h2
               style={{
                 fontFamily: "'Abhaya Libre', serif",
@@ -61,7 +61,7 @@ const AboutUs = () => {
             {/* Read More/Less Button */}
             <button
               onClick={toggleReadMore}
-              className="mt-4 py-2 px-4 bg-[#BB945C] hover:bg-[#BB945C] text-[#FFFAE2] font-bold rounded focus:outline-none focus:shadow-outline md:hidden"
+              className="shadow-xl mt-4 py-2 px-4 bg-[#BB945C] hover:bg-[#BB945C] text-[#FFFAE2] font-bold rounded focus:outline-none focus:shadow-outline md:hidden"
             >
               {readMore ? "Read Less" : "Read More"}
             </button>

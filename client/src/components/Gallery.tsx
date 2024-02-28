@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // Assuming you have a type for the image object
 type Image = {
@@ -15,7 +15,11 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
     <div className=" grid grid-cols-2 md:grid-cols-4 gap-4 ">
       {images.map((image, index) => (
         <div key={index} className="w-full p-5 ">
-          <img src={image.src} alt={image.alt || `Gallery item ${index}`} className="w-full h-auto object-cover   " />
+          <img
+            src={image.src}
+            alt={image.alt || `Gallery item ${index}`}
+            className="w-full h-auto object-cover rounded"
+          />
         </div>
       ))}
     </div>
