@@ -6,7 +6,7 @@ import MenuSection from "./components/MenuSection";
 import Footer from "./components/Footer";
 import Reviews from "./components/Reviews";
 import AboutUs from "./components/AboutUs";
-
+import Spacer from "./components/Spacer";
 function App() {
   return (
     <>
@@ -23,7 +23,9 @@ function App() {
       <div id="menu">
         <MenuSection />
       </div>
-
+      <div id="spacer">
+        <Spacer />
+      </div>
       <div id="reviews">
         <Reviews />
       </div>
