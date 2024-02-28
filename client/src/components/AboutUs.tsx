@@ -11,12 +11,12 @@ const AboutUs = () => {
   return (
     <section className="bg-[#B2C4A1] py-10">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div>
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-center">
+          <div className="mx-auto">
             <img
               src={pubImage}
               alt="The Queen's Head Pub"
-              className="rounded-lg shadow-md  shadow-xl"
+              className="rounded-lg h-auto shadow-md md:h-[500px] shadow-xl"
             />
           </div>
           <div className="rounded  bg-white p-6 shadow-xl ">
