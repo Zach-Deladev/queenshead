@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import pubImage from "../assets/pubfront.jpg"; // Make sure the path is correct
 
 const AboutUs = () => {
