@@ -1,4 +1,4 @@
-import hero from "../assets/herobg.png";
+import hero from "../assets/herobg.webp";
 import logo from "../assets/logo.png";
 import facebook from "../assets/facebook.png";
 import linkedin from "../assets/linkedin.png";
