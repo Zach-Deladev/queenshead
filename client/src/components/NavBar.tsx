@@ -73,6 +73,15 @@ const NavBar = () => {
           <li>
             <a
               className="text-lg font-bold hover:text-gray-500"
+              href="#about"
+              style={{ color: "#FFFAE2" }}
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              className="text-lg font-bold hover:text-gray-500"
               href="#menu"
               style={{ color: "#FFFAE2" }}
             >
@@ -141,7 +150,14 @@ const NavBar = () => {
                   Home
                 </a>
               </li>
-
+              <li className="mb-1">
+                <a
+                  className="block p-4 text-lg font-semibold  text-[#FFFAE2] hover:bg-[#BB945C] hover:text-black-600 rounded"
+                  href="#about"
+                >
+                  About
+                </a>
+              </li>
               <li className="mb-1">
                 <a
                   className="block p-4 text-lg  font-semibold  text-[#FFFAE2] hover:bg-[#BB945C] hover:text-black-600 rounded"
