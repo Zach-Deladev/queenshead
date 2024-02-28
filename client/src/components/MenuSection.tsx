@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import drinksImage from '../assets/drinks.png';
-import Gallery from './Gallery';
-import image1 from '../assets/pint.jpg';
-import image2 from '../assets/fishnchips.jpg';
-import image3 from '../assets/pintoutside.jpg';
-import image4 from '../assets/pienchips.jpg';
-import menu from '../assets/menu.jpg';
+import { useState } from "react";
+import drinksImage from "../assets/drinks.png";
+import Gallery from "./Gallery";
+import image1 from "../assets/pint.jpg";
+import image2 from "../assets/fishnchips.jpg";
+import image3 from "../assets/pintoutside.jpg";
+import image4 from "../assets/pienchips.jpg";
+import menu from "../assets/menu.webp";
 
 const MenuSection = () => {
   const [showModal, setShowModal] = useState(false);
@@ -15,10 +15,10 @@ const MenuSection = () => {
   };
 
   const images = [
-    { src: image1, alt: 'pint' },
-    { src: image2, alt: 'fish and chips' },
-    { src: image3, alt: 'pint outside' },
-    { src: image4, alt: 'pie and chips' },
+    { src: image1, alt: "pint" },
+    { src: image2, alt: "fish and chips" },
+    { src: image3, alt: "pint outside" },
+    { src: image4, alt: "pie and chips" },
   ];
 
   return (
@@ -30,7 +30,11 @@ const MenuSection = () => {
       />
       <div className="z-10 flex flex-col items-center text-center bg-black bg-opacity-50">
         <h1
-          style={{ color: '#FFFAE2', fontFamily: "'Abhaya Libre', serif", fontWeight: '600' }}
+          style={{
+            color: "#FFFAE2",
+            fontFamily: "'Abhaya Libre', serif",
+            fontWeight: "600",
+          }}
           className="text-4xl md:text-5xl my-3 pt-6 font-bold"
         >
           Food & Drinks
