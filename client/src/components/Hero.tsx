@@ -1,4 +1,4 @@
-import hero from "../assets/herobg.webp";
+import hero from "../assets/tabletop.webp";
 import logo from "../assets/logo.png";
 import facebook from "../assets/facebook.png";
 import linkedin from "../assets/linkedin.png";
@@ -18,7 +18,7 @@ const Hero = () => {
           <img
             src={logo}
             alt="Queen's Head Logo"
-            className="max-w-xs md:max-w-2xl mb-4"
+            className="max-w-xs md:max-w-xl mb-4"
           />
 
           {/* Subtitle */}
