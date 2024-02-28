@@ -6,8 +6,7 @@ import OpeningHours from "./components/OpeningHours";
 import MenuSection from "./components/MenuSection";
 import Footer from "./components/Footer";
 import Reviews from "./components/Reviews";
-
-
+import AboutUs from "./components/AboutUs";
 
 function App() {
  
@@ -18,9 +17,9 @@ function App() {
       <div id="home">
         <Hero />
       </div>
-      {/* <div id="opening-hours">
-        <OpeningHours />
-      </div> */}
+      <div id="about">
+        <AboutUs />
+      </div>
       <div id="menu">
         <MenuSection />
       </div>

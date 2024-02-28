@@ -3,7 +3,7 @@ import pub from "../assets/pubfront.jpg";
 const OpeningHours = () => {
   return (
     <div
-      className="relative "
+      className="relative bg-[#B2C4A1]"
       style={{
         backgroundImage: `url(${pub})`,
         backgroundSize: "cover",
@@ -11,7 +11,8 @@ const OpeningHours = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="bg-white bg-opacity-100 p-6">
+      <div className="bg-[#B2C4A1] bg-opacity-100 p-6">
+        <div className="bg-white p-6 border-4 border-[#BB945C]">
         <h3 className="font-bold  text-center md:text-lg  mb-6">
           - OPENING HOURS -
         </h3>
@@ -20,6 +21,7 @@ const OpeningHours = () => {
           <div>
             <p className="font-bold text-xl">12 AM - 12 PM All Week!</p>
           </div>
+        </div>
         </div>
       </div>
     </div>

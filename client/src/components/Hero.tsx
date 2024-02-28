@@ -18,7 +18,7 @@ const Hero = () => {
           <img
             src={logo}
             alt="Queen's Head Logo"
-            className="max-w-xs md:max-w-lg mb-4"
+            className="max-w-xs md:max-w-2xl mb-4"
           />
 
           {/* Subtitle */}
