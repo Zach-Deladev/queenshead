@@ -65,7 +65,7 @@ const Hero = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-1 ">
         <div className="relative bg-black flex justify-center items-center">
-          <img src={sports} alt="" className="w-72" />
+          <img src={sports} alt="" className="w-72 " />
         </div>
       </div>
     </>

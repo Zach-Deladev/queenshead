@@ -52,19 +52,19 @@ const Footer = () => {
               type="text"
               name="user_name"
               placeholder="Your Name"
-              className="p-2 bg-transparent border-2 border-[#BB945C] text-[#FFFAE2] focus:outline-none focus:border-[#BB945C] focus:ring-1 focus:ring-[#BB945C]"
+              className="p-2 bg-transparent border-double border-4 border-[#BB945C] text-[#FFFAE2] focus:outline-none focus:border-[#BB945C] focus:ring-1 focus:ring-[#BB945C]"
             />
             <input
               type="email"
               name="user_email"
               placeholder="Your Email"
-              className="p-2 bg-transparent border-2 border-[#BB945C] text-[#FFFAE2] focus:outline-none focus:border-[#BB945C] focus:ring-1 focus:ring-[#BB945C]"
+              className="p-2 bg-transparent border-double border-4 border-[#BB945C] text-[#FFFAE2] focus:outline-none focus:border-[#BB945C] focus:ring-1 focus:ring-[#BB945C]"
             />
             <textarea
               name="message"
               placeholder="Your Message"
               rows={4}
-              className="p-2 bg-transparent border-2 border-[#BB945C] text-[#FFFAE2] focus:outline-none focus:border-[#BB945C] focus:ring-1 focus:ring-[#BB945C]"
+              className="p-2 bg-transparent border-double border-4 border-[#BB945C] text-[#FFFAE2] focus:outline-none focus:border-[#BB945C] focus:ring-1 focus:ring-[#BB945C]"
             ></textarea>
             <button
               type="submit"
@@ -123,7 +123,7 @@ const Footer = () => {
             </p>
           </div>
           <iframe
-            className="w-full h-64 mb-4 border-2 border-[#BB945C]"
+            className="w-full h-64 mb-4 border-double border-8 border-[#BB945C]"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9145.501143754644!2d-1.4321433!3d55.03664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e6ea1e28c5fb9%3A0x46fce2c7c40a1dd0!2sThe%20Queens%20Head%20Cullercoats!5e0!3m2!1sen!2suk!4v1708379190927!5m2!1sen!2suk"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
