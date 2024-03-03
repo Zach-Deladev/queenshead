@@ -20,7 +20,7 @@ const OpeningHours = () => {
             {/* Hours for Monday - Friday */}
             <div>
               <p className="font-bold text-white text-xl">
-                12 AM - 12 PM All Week!
+                12 AM - 11 PM All Week!
               </p>
             </div>
           </div>
