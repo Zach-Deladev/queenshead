@@ -54,10 +54,16 @@ const Hero = () => {
             >
               <img src={facebook} alt="Facebook" className="w-8 h-8" />
             </a>
-            <a href="#instagram" className="text-white hover:text-gray-300">
+            <a
+              href="https://www.instagram.com/queensheadcullercoats?igsh=MTM3dmhqNWpkenZtbg=="
+              className="text-white hover:text-gray-300"
+            >
               <img src={insta} alt="Instagram" className="w-8 h-8" />
             </a>
-            <a href="#linkedin" className="text-white hover:text-gray-300">
+            <a
+              href="https://www.facebook.com/profile.php?id=61555579756205"
+              className="text-white hover:text-gray-300"
+            >
               <img src={linkedin} alt="LinkedIn" className="w-8 h-8" />
             </a>
           </div>
