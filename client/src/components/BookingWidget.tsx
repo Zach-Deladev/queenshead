@@ -37,13 +37,7 @@ const BookingWidget: React.FC<BookingWidgetProps> = ({ venueId }) => {
       "https://onsass.designmynight.com/?theme=dark&primary-color=%23FF0000";
     document.head.appendChild(link);
 
-    // Cleanup function to remove script and link on unmount
-    return () => {
-      if (widgetRef.current) {
-        widgetRef.current.innerHTML = ""; // Clear the container
-      }
-      document.head.removeChild(link); // Remove the stylesheet
-    };
+    // No cleanup function
   }, [venueId]);
 
   // Style for the container of the widget
