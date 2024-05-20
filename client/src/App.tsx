@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; // Ensure React is imported
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
@@ -11,7 +11,7 @@ import Spacer from "./components/Spacer";
 import Modal from "./components/Modal";
 import BookingWidget from "./components/BookingWidget";
 
-function App() {
+const App: React.FC = () => { // Example of using React in a type definition
   const [showModal, setShowModal] = useState(false);
   const [widgetKey, setWidgetKey] = useState(0);
   const venueId = import.meta.env.VITE_VENUE_ID || ""; // Get venue ID from environment variables
