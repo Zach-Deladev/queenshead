@@ -34,7 +34,7 @@ const BookingWidget: React.FC<BookingWidgetProps> = ({ venueId }) => {
     link.rel = "stylesheet";
     link.type = "text/css";
     link.href =
-      "https://onsass.designmynight.com/?background-color=%23FFFFFF&primary-color=%236DA8A6&body-text-color=%23000000&outer-border-color=gray";
+      "https://onsass.designmynight.com/?theme=dark&primary-color=%23FF0000";
     document.head.appendChild(link);
 
     // Cleanup function to remove script and link on unmount

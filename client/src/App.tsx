@@ -57,7 +57,7 @@ const App: React.FC = () => { // Example of using React in a type definition
         show={showModal}
         onClose={handleCloseModal}
         style={{
-          width: "80%", // Adjust the width as needed
+          width:"350px", // Adjust the width as needed
           maxWidth: "800px", // Set a max-width if needed
         }}
       >
