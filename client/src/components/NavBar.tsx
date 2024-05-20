@@ -1,7 +1,12 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import sports from "../assets/sports.png";
 import logo from "../assets/logo.png";
-const NavBar = () => {
+
+interface NavBarProps {
+  onOpenModal: () => void; // Function to open the modal
+}
+
+const NavBar: React.FC<NavBarProps> = ({ onOpenModal }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [navbarBg, setNavbarBg] = useState("bg-transparent");
 
@@ -28,9 +33,7 @@ const NavBar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full px-4 py-4 md:py-8 <div id="opening-hours">
-        <OpeningHours />
-      </div> flex justify-between items-center z-50 ${navbarBg}`}
+        className={`fixed top-0 left-0 w-full px-4 py-4 md:py-8 flex justify-between items-center z-50 ${navbarBg}`}
       >
         <a
           className="text-3xl font-bold leading-none"
@@ -46,7 +49,7 @@ const NavBar = () => {
             style={{ color: "#FFFAE2" }}
           >
             <svg
-              className="block h-4 w-4 fill-current "
+              className="block h-4 w-4 fill-current"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
               style={{ fill: "#BB945C" }}
@@ -88,7 +91,6 @@ const NavBar = () => {
               Food & Drinks
             </a>
           </li>
-
           <li>
             <a
               className="text-lg font-bold hover:text-black-500"
@@ -97,6 +99,19 @@ const NavBar = () => {
             >
               Contact
             </a>
+          </li>
+          <li>
+            <button
+              onClick={onOpenModal}
+              className="text-lg font-bold border-2 border-solid px-4 py-2"
+              style={{
+                borderColor: "#BB945C",
+                color: "#FFFAE2",
+                fontWeight: "600",
+              }}
+            >
+              Book Now
+            </button>
           </li>
         </ul>
       </nav>
@@ -125,9 +140,9 @@ const NavBar = () => {
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M6 18L18 6M6 6l12 12"
                 ></path>
               </svg>
@@ -173,6 +188,14 @@ const NavBar = () => {
                   href="#contact"
                 >
                   Contact
+                </a>
+              </li>
+              <li className="mb-1">
+                <a
+                  onClick={onOpenModal}
+                  className="block p-4 text-lg font-semibold text-[#FFFAE2] hover:bg-[#BB945C] hover:text-black-600 rounded"
+                >
+                  Book Now
                 </a>
               </li>
             </ul>
