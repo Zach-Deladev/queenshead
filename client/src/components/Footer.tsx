@@ -14,18 +14,18 @@ const Footer = () => {
     if (!formCurrent) return; // Exit if form is not initialized
 
     emailjs
-      .sendForm("your_service_id", "your_template_id", formCurrent, userID)
-      .then(
-        (result) => {
-          console.log(result.text);
-          toast.success("Email sent successfully!");
-          formCurrent.reset();
-        },
-        (error) => {
-          console.log(error.text);
-          toast.error("Failed to send the email.");
-        }
-      );
+    .sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, formCurrent, userID)
+    .then(
+      (result) => {
+        console.log(result.text);
+        toast.success("Email sent successfully!");
+        formCurrent.reset();
+      },
+      (error) => {
+        console.log(error.text);
+        toast.error("Failed to send the email.");
+      }
+    );
   };
 
   return (
