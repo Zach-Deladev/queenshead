@@ -14,18 +14,18 @@ const Footer = () => {
     if (!formCurrent) return; // Exit if form is not initialized
 
     emailjs
-    .sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, formCurrent, userID)
-    .then(
-      (result) => {
-        console.log(result.text);
-        toast.success("Email sent successfully!");
-        formCurrent.reset();
-      },
-      (error) => {
-        console.log(error.text);
-        toast.error("Failed to send the email.");
-      }
-    );
+      .sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, formCurrent, userID)
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast.success("Email sent successfully!");
+          formCurrent.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          toast.error("Failed to send the email.");
+        }
+      );
   };
 
   return (
@@ -33,7 +33,7 @@ const Footer = () => {
       <ToastContainer />
       <div className="container mx-auto flex flex-wrap justify-between items-start md:items-stretch">
         <div className="w-full md:w-1/2 lg:w-1/2 p-5">
-          <form
+          {/* <form
             ref={form}
             onSubmit={sendEmail}
             className="flex flex-col space-y-4"
@@ -72,10 +72,18 @@ const Footer = () => {
             >
               Send
             </button>
-          </form>
-        </div>
-        <div className="w-full md:w-1/2 lg:w-1/2 p-5">
+          </form> */}
           <div>
+            <h1
+              className="text-4xl md:text-5xl leading-normal mb-4"
+              style={{
+                color: "#FFFAE2",
+                fontFamily: "'Abhaya Libre', serif",
+                fontWeight: "600",
+              }}
+            >
+              Get in touch....
+            </h1>
             <p className="mb-2 text-[#FFFAE2]">
               <span className="mr-2">
                 {/* SVG Icon for Location */}
@@ -119,9 +127,19 @@ const Footer = () => {
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 1.99 2H20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                 </svg>
               </span>
-              Manager@queensheadcullercoats.co.uk
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=Manager@queensheadcullercoats.co.uk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FFFAE2] underline"
+              >
+                Manager@queensheadcullercoats.co.uk
+              </a>
             </p>
           </div>
+        </div>
+
+        <div className="w-full md:w-1/2 lg:w-1/2 p-5">
           <iframe
             className="w-full h-64 mb-4 border-double border-8 border-[#BB945C]"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9145.501143754644!2d-1.4321433!3d55.03664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e6ea1e28c5fb9%3A0x46fce2c7c40a1dd0!2sThe%20Queens%20Head%20Cullercoats!5e0!3m2!1sen!2suk!4v1708379190927!5m2!1sen!2suk"
