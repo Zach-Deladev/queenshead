@@ -1,6 +1,6 @@
 // import { useRef, FormEvent } from "react";
 // import emailjs from "emailjs-com";
-// import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Footer = () => {
@@ -30,7 +30,7 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-black text-white p-10">
-      {/* <ToastContainer /> */}
+      <ToastContainer />
       <div className="container mx-auto flex flex-wrap justify-between items-start md:items-stretch">
         <div className="w-full md:w-1/2 lg:w-1/2 p-5">
           {/* <form
@@ -128,9 +128,7 @@ const Footer = () => {
                 </svg>
               </span>
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=Manager@queensheadcullercoats.co.uk"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:Manager@queensheadcullercoats.co.uk"
                 className="text-[#FFFAE2] underline"
               >
                 Manager@queensheadcullercoats.co.uk
