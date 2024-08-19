@@ -1,31 +1,31 @@
-import { useRef, FormEvent } from "react";
-import emailjs from "emailjs-com";
-import { ToastContainer, toast } from "react-toastify";
+// import { useRef, FormEvent } from "react";
+// import emailjs from "emailjs-com";
+// import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Footer = () => {
-  const form = useRef<HTMLFormElement>(null);
-  const userID = import.meta.env.VITE_USER_ID; // Ensure this is correctly set in your .env file
+  // const form = useRef<HTMLFormElement>(null);
+  // const userID = import.meta.env.VITE_USER_ID; // Ensure this is correctly set in your .env file
 
-  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formCurrent = form.current;
+  // const sendEmail = (e: FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   const formCurrent = form.current;
 
-    if (!formCurrent) return; // Exit if form is not initialized
+  //   if (!formCurrent) return; // Exit if form is not initialized
 
-    emailjs
-      .sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, formCurrent, userID)
-      .then(
-        (result) => {
-          console.log(result.text);
-          toast.success("Email sent successfully!");
-          formCurrent.reset();
-        },
-        (error) => {
-          console.log(error.text);
-          toast.error("Failed to send the email.");
-        }
-      );
+  //   emailjs
+  //     .sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, formCurrent, userID)
+  //     .then(
+  //       (result) => {
+  //         console.log(result.text);
+  //         toast.success("Email sent successfully!");
+  //         formCurrent.reset();
+  //       },
+  //       (error) => {
+  //         console.log(error.text);
+  //         toast.error("Failed to send the email.");
+  //       }
+  //     );
   };
 
   return (
