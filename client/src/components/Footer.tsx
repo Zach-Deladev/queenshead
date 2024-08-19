@@ -26,11 +26,11 @@ const Footer = () => {
   //         toast.error("Failed to send the email.");
   //       }
   //     );
-  };
+  // };
 
   return (
     <footer className="w-full bg-black text-white p-10">
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       <div className="container mx-auto flex flex-wrap justify-between items-start md:items-stretch">
         <div className="w-full md:w-1/2 lg:w-1/2 p-5">
           {/* <form
