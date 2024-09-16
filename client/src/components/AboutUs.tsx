@@ -21,16 +21,24 @@ const AboutUs = () => {
               "
             />
           </div>
-          <div className="rounded  bg-white p-6 drop-shadow-xl">
+          <div  style={{
+                fontFamily: "'Abhaya Libre', serif",
+                color: "#FFFAE2",
+                backgroundColor: "rgba(0, 0, 0, 0.37)"
+              }}className="squared  border-[#FFFAE2]  border-4 p-6 drop-shadow-xl">
             <h2
               style={{
                 fontFamily: "'Abhaya Libre', serif",
+                color: "#FFFAE2"
               }}
               className="text-3xl md:text-5xl font-bold text-gray-800 mb-4 "
             >
               About Us
             </h2>
-            <p className="text-gray-600 mb-4">
+            <p style={{
+                fontFamily: "'Abhaya Libre', serif",
+                color: "#FFFAE2"
+              }} className="text-gray-600 mb-4 ">
               Experience the charm and warm hospitality of The Queen's Head, a
               traditional seaside pub that combines the allure of the coast with
               the comfort of a local tavern. Revel in our gastro pub style
@@ -41,19 +49,28 @@ const AboutUs = () => {
             </p>
             {/* Hidden paragraphs */}
             <div className={`${readMore ? "block" : "hidden"} md:block`}>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4"  style={{
+                fontFamily: "'Abhaya Libre', serif",
+                color: "#FFFAE2"
+              }}>
                 At our bar, you'll find a diverse selection of premium draught
                 beers, ales, wines, and spirits, specially curated to complement
                 our food. Whether you're a beer enthusiast, a wine connoisseur,
                 or a lover of spirits, our offerings cater to all tastes.
               </p>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4" style={{
+                fontFamily: "'Abhaya Libre', serif",
+                color: "#FFFAE2"
+              }}>
                 Our large beer garden is a haven for those sunny days when all
                 you want to do is bask in the coastal atmosphere. It's the
                 perfect setting to unwind, enjoy a refreshing drink, and soak up
                 the sun.
               </p>
-              <p className="text-gray-600">
+              <p className="text-gray-600" style={{
+                fontFamily: "'Abhaya Libre', serif",
+                color: "#FFFAE2"
+              }}>
                 At The Queen's Head, we're more than just a pub. We're a place
                 where food, drinks, and the sea come together to create
                 unforgettable experiences. Join us for a meal and let us
