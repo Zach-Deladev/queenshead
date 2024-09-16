@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import hero from "../assets/tabletop.webp";
 import logo from "../assets/logo.png";
 import facebook from "../assets/facebook.png";
