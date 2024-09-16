@@ -101,14 +101,16 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
       {/* Modal for Christmas Menu */}
       {isMenuModalOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center"
+          className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto"
           onClick={handleCloseMenuModal}
         >
           <div
-            className="bg-black bg-opacity-70 p-8 border-4 rounded-none"
+            className="bg-black bg-opacity-70 p-8 border-4 rounded-none mx-4 max-w-lg w-full"
             style={{
               borderColor: "#BB945C", // Matching border color
               backgroundColor: "rgba(0, 0, 0, 0.67)", // 67% transparent black background
+              maxHeight: "90vh", // Ensure the modal doesn't exceed 90% of the viewport height
+              overflowY: "auto", // Scroll inside modal if content overflows
             }}
             onClick={(e) => e.stopPropagation()}
           >
