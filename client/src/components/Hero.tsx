@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import hero from "../assets/tabletop.webp";
 import logo from "../assets/logo.png";
 import facebook from "../assets/facebook.png";
 import linkedin from "../assets/linkedin.png";
 import insta from "../assets/insta.png";
 import sports from "../assets/sports.png";
+import menu1 from "../assets/chirstmasmenuone.png";
+import menu2 from "../assets/christmasmenu2.png";
+import christmasMenuPdf from "../assets/christmas_menu.pdf"; // Import your PDF file
 
 interface HeroProps {
-  onOpenModal: () => void; // Define the prop for opening the modal
+  onOpenModal: () => void;
 }
 
 const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
+  const [isMenuModalOpen, setMenuModalOpen] = useState(false);
+
+  const handleOpenMenuModal = () => {
+    setMenuModalOpen(true);
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = "hidden";
+  };
+
+  const handleCloseMenuModal = () => {
+    setMenuModalOpen(false);
+    // Restore body scroll when modal is closed
+    document.body.style.overflow = "auto";
+  };
+
   return (
     <>
       <div
@@ -31,9 +48,20 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
               fontWeight: "600",
             }}
           >
-            Crafting Culinary Memories <br /> by the Sea
+            Christmas Bookings now open! <br />
           </h2>
-
+          {/* Christmas Menu Button */}
+          <button
+            onClick={handleOpenMenuModal}
+            className="inline-block px-4 py-2 m-2 border-4 border-solid mb-4 ml-4"
+            style={{
+              borderColor: "#BB945C",
+              color: "#FFf",
+              fontWeight: "600",
+            }}
+          >
+            Christmas Menu
+          </button>
           {/* Booking Button */}
           <button
             onClick={onOpenModal}
@@ -69,9 +97,63 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-1 ">
+
+      {/* Modal for Christmas Menu */}
+      {isMenuModalOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center"
+          onClick={handleCloseMenuModal}
+        >
+          <div
+            className="bg-black bg-opacity-70 p-8 border-4 rounded-none"
+            style={{
+              borderColor: "#BB945C", // Matching border color
+              backgroundColor: "rgba(0, 0, 0, 0.67)", // 67% transparent black background
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 className="text-2xl font-bold mb-4 text-white">Christmas Menu</h2>
+
+            {/* Stacked Menu Images */}
+            <div className="flex flex-col space-y-4">
+              <img src={menu1} alt="Christmas Menu 1" className="max-w-full" />
+              <img src={menu2} alt="Christmas Menu 2" className="max-w-full" />
+            </div>
+
+            {/* Download Menu Button */}
+            <a
+              href={christmasMenuPdf}
+              download
+              className="mt-4 m-2 inline-block px-4 py-2 border-2 border-solid"
+              style={{
+                borderColor: "#BB945C",
+                color: "#fff",
+                fontWeight: "600",
+                textDecoration: "none",
+              }}
+            >
+              Download Full Menu
+            </a>
+
+            {/* Close Button */}
+            <button
+              onClick={handleCloseMenuModal}
+              className="mt-4 px-4 py-2 border-2 border-solid"
+              style={{
+                borderColor: "#BB945C",
+                color: "#fff",
+                fontWeight: "600",
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-1">
         <div className="relative bg-black flex justify-center items-center">
-          <img src={sports} alt="" className="w-72 " />
+          <img src={sports} alt="" className="w-72" />
         </div>
       </div>
     </>
