@@ -5,10 +5,9 @@ import image2 from "../assets/fishnchips.jpg";
 import image3 from "../assets/pintoutside.jpg";
 import image4 from "../assets/pienchips.jpg";
 import menuPdf from "../assets/menupdf.pdf"; // Import your PDF file here
+import sundayMenuPdf from "../assets/sundaymenupdf.pdf";
 
 const MenuSection = () => {
-  // Removed useState hook for showModal
-
   const images = [
     { src: image1, alt: "pint" },
     { src: image2, alt: "fish and chips" },
@@ -17,7 +16,7 @@ const MenuSection = () => {
   ];
 
   return (
-    <div className="relative flex flex-col items-center text-center  min-h-fit">
+    <div className="relative flex flex-col items-center text-center min-h-fit">
       <img
         src={drinksImage}
         alt="Drinks"
@@ -35,13 +34,22 @@ const MenuSection = () => {
           Food & Drinks
         </h1>
         <Gallery images={images} />
-        <a
-          href={menuPdf} // Link to your PDF file
-          download="Menu.pdf" // Optional: Specify a filename for the downloaded file
-          className="py-1 px-3 mt-3 mb-4 bg-transparent border-4 border-[#BB945C] text-[#FFFAE2] font-bold focus:outline-none focus:shadow-outline hover:bg-[#BB945C]"
-        >
-          Download Menu
-        </a>
+        <div className="flex space-x-4 mt-3 mb-4">
+          <a
+            href={menuPdf}
+            download="Menu.pdf"
+            className="py-1 px-3 bg-transparent border-4 border-[#BB945C] text-[#FFFAE2] font-bold focus:outline-none focus:shadow-outline hover:bg-[#BB945C]"
+          >
+            Standard Menu
+          </a>
+          <a
+            href={sundayMenuPdf}
+            download="SundayMenu.pdf"
+            className="py-1 px-3 bg-transparent border-4 border-[#BB945C] text-[#FFFAE2] font-bold focus:outline-none focus:shadow-outline hover:bg-[#BB945C]"
+          >
+            Sunday Menu
+          </a>
+        </div>
       </div>
     </div>
   );

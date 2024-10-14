@@ -8,6 +8,11 @@ import sports from "../assets/sports.png";
 import menu1 from "../assets/chirstmasmenuone.png";
 import menu2 from "../assets/christmasmenu2.png";
 import christmasMenuPdf from "../assets/christmas_menu.pdf"; // Import your PDF file
+import standardMenuPdf from "../assets/menupdf.pdf";
+import sundayMenuPdf from "../assets/sundaymenupdf.pdf";
+import standardMenuImage from "../assets/foodmenuimg.png";
+import sundayMenuImage from "../assets/sundaymenuimg.png";
+
 
 interface HeroProps {
   onOpenModal: () => void;
@@ -15,8 +20,10 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
   const [isMenuModalOpen, setMenuModalOpen] = useState(false);
+  const [menuType, setMenuType] = useState("christmas");
 
-  const handleOpenMenuModal = () => {
+  const handleOpenMenuModal = (type: string) => {
+    setMenuType(type);
     setMenuModalOpen(true);
     // Prevent body scroll when modal is open
     document.body.style.overflow = "hidden";
@@ -27,6 +34,32 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
     // Restore body scroll when modal is closed
     document.body.style.overflow = "auto";
   };
+
+  const getMenuContent = () => {
+    switch (menuType) {
+      case "standard":
+        return {
+          title: "Standard Menu",
+          image: standardMenuImage,
+          pdf: standardMenuPdf,
+        };
+      case "sunday":
+        return {
+          title: "Sunday Menu",
+          image: sundayMenuImage,
+          pdf: sundayMenuPdf,
+        };
+      case "christmas":
+      default:
+        return {
+          title: "Christmas Menu",
+          images: [menu1, menu2],
+          pdf: christmasMenuPdf,
+        };
+    }
+  };
+
+  const menuContent = getMenuContent();
 
   return (
     <>
@@ -50,32 +83,60 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           >
             Christmas Bookings now open! <br />
           </h2>
-          {/* Christmas Menu Button */}
-          <button
-            onClick={handleOpenMenuModal}
-            className="inline-block px-4 py-2 m-2 border-4 border-solid mb-4 ml-4"
-            style={{
-              borderColor: "#BB945C",
-              color: "#FFf",
-              fontWeight: "600",
-            }}
-          >
-            Christmas Menu
-          </button>
-          {/* Booking Button */}
-          <button
-            onClick={onOpenModal}
-            className="inline-block px-4 py-2 border-4 border-solid mb-4"
-            style={{
-              borderColor: "#BB945C",
-              color: "#FFFAE2",
-              fontWeight: "600",
-            }}
-          >
-            Book Now
-          </button>
 
-          <div className="flex space-x-4 justify-center items-center">
+          {/* Menu Buttons */}
+          <div className="flex flex-col md:flex-row md:space-x-4 justify-center mt-4 mb-4 space-y-4 md:space-y-0">
+            <button
+              onClick={() => handleOpenMenuModal("standard")}
+              className="inline-block px-4 py-2 border-4 border-solid"
+              style={{
+                borderColor: "#BB945C",
+                color: "#FFF",
+                fontWeight: "600",
+              }}
+            >
+              Standard Menu
+            </button>
+            <button
+              onClick={() => handleOpenMenuModal("sunday")}
+              className="inline-block px-4 py-2 border-4 border-solid"
+              style={{
+                borderColor: "#BB945C",
+                color: "#FFF",
+                fontWeight: "600",
+              }}
+            >
+              Sunday Menu
+            </button>
+            <button
+              onClick={() => handleOpenMenuModal("christmas")}
+              className="inline-block px-4 py-2 border-4 border-solid"
+              style={{
+                borderColor: "#BB945C",
+                color: "#FFF",
+                fontWeight: "600",
+              }}
+            >
+              Christmas Menu
+            </button>
+          </div>
+
+          {/* Booking Button */}
+          <div className="mt-4">
+            <button
+              onClick={onOpenModal}
+              className="inline-block px-4 py-2 border-4 border-solid"
+              style={{
+                borderColor: "#BB945C",
+                color: "#FFFAE2",
+                fontWeight: "600",
+              }}
+            >
+              Book Now
+            </button>
+          </div>
+
+          <div className="flex space-x-4 justify-center items-center mt-4">
             <a
               href="https://www.facebook.com/profile.php?id=61555579756205"
               className="text-white hover:text-gray-300"
@@ -98,7 +159,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
         </div>
       </div>
 
-      {/* Modal for Christmas Menu */}
+      {/* Modal for Menus */}
       {isMenuModalOpen && (
         <div
           className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto"
@@ -114,17 +175,24 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-2xl font-bold mb-4 text-white">Christmas Menu</h2>
+            <h2 className="text-2xl font-bold mb-4 text-white">{menuContent.title}</h2>
 
-            {/* Stacked Menu Images */}
-            <div className="flex flex-col space-y-4">
-              <img src={menu1} alt="Christmas Menu 1" className="max-w-full" />
-              <img src={menu2} alt="Christmas Menu 2" className="max-w-full" />
-            </div>
+            {/* Display Menu Images */}
+            {menuContent.images ? (
+              <div className="flex flex-col space-y-4">
+                {menuContent.images.map((image, index) => (
+                  <img key={index} src={image} alt={`${menuContent.title} ${index + 1}`} className="max-w-full" />
+                ))}
+              </div>
+            ) : (
+              <div className="flex flex-col space-y-4">
+                <img src={menuContent.image} alt={menuContent.title} className="max-w-full" />
+              </div>
+            )}
 
             {/* Download Menu Button */}
             <a
-              href={christmasMenuPdf}
+              href={menuContent.pdf}
               download
               className="mt-4 m-2 inline-block px-4 py-2 border-2 border-solid"
               style={{
